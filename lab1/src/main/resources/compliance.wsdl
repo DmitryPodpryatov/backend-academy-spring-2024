@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description>
+    <documentation>
+        WSDL документ для сервиса комплаенса
+    </documentation>
+    <types>
+        <xs:schema
+                xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xs:element name="request">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="source" type="xs:string"/>
+                        <xs:element name="destination" type="xs:string"/>
+                        <xs:element name="amount" type="xs:decimal"/>
+                        <xs:element name="date" type="xs:date"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="result" type="xs:string"/>
+        </xs:schema>
+    </types>
+
+    ...
+
+</description>

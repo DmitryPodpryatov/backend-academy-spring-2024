@@ -1,0 +1,73 @@
+openapi: 3.0.0
+info:
+  title: Платежи
+  description: Сервис по проведению платежей
+  version: 0.0.1-SNAPSHOT
+
+servers:
+  - url: http://localhost:8080/
+    description: Бэкенд сервис
+  - url: http://localhost:1080/
+    description: Моки
+
+tags:
+  - name: Переводы
+
+paths:
+  api/v1/payments/transfer:
+    post:
+      summary: Перевод между двумя клиентами по userId
+      tags:
+        - Переводы
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/transfer-request'
+      responses:
+        '200':
+          description: Перевод усмешно проведен
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/transfer-response'
+        '400':
+          description: Некорректный запрос
+        '404':
+          description: Пользователь не найден
+        '422':
+          description: Перевод не прошел комплаенс-контроль
+        '500':
+          description: Ошибка сервера
+
+  # заполнить для нашего нового метода
+  api/v1/payments/transfer/by-phone:
+    post:
+      summary:
+      tags:
+        - Переводы
+
+components:
+  schemas:
+    transfer-request:
+      type: object
+      properties:
+        source:
+          type: string
+          description: UserId пользователя-отправителя
+        destination:
+          type: string
+          description: UserId пользователя-получателя
+      required:
+        - source
+        - destination
+
+    transfer-response:
+      type: object
+      properties:
+        paymentId:
+          type: string
+          description: Уникальный идентификатор перевода
+      required:
+        - paymentId

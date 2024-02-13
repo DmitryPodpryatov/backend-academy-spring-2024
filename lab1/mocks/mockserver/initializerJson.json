@@ -1,0 +1,37 @@
+[
+  // перевод от одного клиента к другому по userId (source, destination)
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/api/v1/payments/transfer",
+      "body": {
+        "type": "JSON",
+        "json": {
+          "source": "${json-unit.any-string}",
+          "destination": "${json-unit.any-string}"
+        }
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": {
+        "paymentId": "64c5956a-66de-4e29-92e3-1a714008a2c5"
+      }
+    }
+  },
+  // комплаенс-контроль перевода
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/api/v1/compliance/check/payment",
+      "body": {
+        "type": "XML_SCHEMA",
+        "xmlSchema": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<xs:schema\n\txmlns:xs=\"http://www.w3.org/2001/XMLSchema\">\n\t<xs:element name=\"request\">\n\t\t<xs:complexType>\n\t\t\t<xs:sequence>\n\t\t\t\t<xs:element name=\"source\" type=\"xs:string\"/>\n\t\t\t\t<xs:element name=\"destination\" type=\"xs:string\"/>\n\t\t\t\t<xs:element name=\"amount\" type=\"xs:decimal\"/>\n\t\t\t\t<xs:element name=\"date\" type=\"xs:date\"/>\n\t\t\t</xs:sequence>\n\t\t</xs:complexType>\n\t</xs:element>\n\t<xs:element name=\"result\" type=\"xs:string\"/>\n</xs:schema>"
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<result>Success</result>"
+    }
+  }
+]

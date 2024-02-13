@@ -1,0 +1,13 @@
+type Account {
+    userId: ID!,
+    firstName: String!,
+    secondName: String!,
+    middleName: String,
+    phoneNumber: String!,
+    amount: Float!
+}
+
+type Query {
+    getAccount(userId: String!): Account
+    getAccountByPhoneNumber(phoneNumber: String!): Account
+}
