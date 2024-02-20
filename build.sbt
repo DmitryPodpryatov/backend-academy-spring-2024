@@ -1,4 +1,4 @@
-import Dependencies.Lab1
+import Dependencies._
 
 ThisBuild / scalaVersion := "2.13.12"
 ThisBuild / version := "0.0.1-SNAPSHOT"
@@ -10,7 +10,8 @@ lazy val root = (project in file("."))
     name := "backend-academy-spring-2024"
   )
   .aggregate(
-    lab1
+    lab1,
+    lab2
   )
 
 lazy val lab1 = (project in file("lab1"))
@@ -23,6 +24,23 @@ lazy val lab1 = (project in file("lab1"))
     assembly / assemblyJarName := "lab1.jar",
     assembly / assemblyMergeStrategy := {
       case "module-info.class" => MergeStrategy.discard
-      case x => (assembly / assemblyMergeStrategy).value.apply(x)
+      case x                   => (assembly / assemblyMergeStrategy).value.apply(x)
     }
+  )
+
+lazy val lab2 = (project in file("lab2"))
+  .settings(
+    name := "lab2",
+    libraryDependencies ++= Lab2.dependencies,
+    addCompilerPlugin("org.typelevel" %% "kind-projector" % "0.13.2" cross CrossVersion.full),
+    addCompilerPlugin("com.olegpy" %% "better-monadic-for" % "0.3.1"),
+    scalacOptions := Seq(
+      "-encoding",
+      "utf8",
+      "-unchecked",
+      "-feature",
+      "-language:higherKinds",
+      "-language:implicitConversions",
+      "-Ymacro-annotations"
+    )
   )

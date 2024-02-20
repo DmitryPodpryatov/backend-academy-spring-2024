@@ -2,9 +2,7 @@ version: "3.9"
 
 services:
   app:
-    build:
-      context: .
-      dockerfile: ./src/main/resources/Dockerfile
+    image: backend-academy:lab1
     ports:
       - "8080:8080"
 
