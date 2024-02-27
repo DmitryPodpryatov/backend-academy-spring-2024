@@ -3,8 +3,6 @@ import Dependencies._
 ThisBuild / scalaVersion := "2.13.12"
 ThisBuild / version := "0.0.1-SNAPSHOT"
 
-Compile / run / fork := true
-
 lazy val root = (project in file("."))
   .settings(
     name := "backend-academy-spring-2024"
@@ -25,7 +23,8 @@ lazy val lab1 = (project in file("lab1"))
     assembly / assemblyMergeStrategy := {
       case "module-info.class" => MergeStrategy.discard
       case x                   => (assembly / assemblyMergeStrategy).value.apply(x)
-    }
+    },
+    Compile / run / fork := true
   )
 
 lazy val lab2 = (project in file("lab2"))
@@ -34,13 +33,22 @@ lazy val lab2 = (project in file("lab2"))
     libraryDependencies ++= Lab2.dependencies,
     addCompilerPlugin("org.typelevel" %% "kind-projector" % "0.13.2" cross CrossVersion.full),
     addCompilerPlugin("com.olegpy" %% "better-monadic-for" % "0.3.1"),
-    scalacOptions := Seq(
-      "-encoding",
-      "utf8",
-      "-unchecked",
-      "-feature",
+    scalacOptions ++= Seq(
       "-language:higherKinds",
-      "-language:implicitConversions",
       "-Ymacro-annotations"
-    )
+    ),
+    Compile / run / fork := true
+  )
+
+lazy val lab3 = (project in file("lab3"))
+  .settings(
+    name := "lab3",
+    libraryDependencies ++= Lab3.dependencies,
+    addCompilerPlugin("org.typelevel" %% "kind-projector" % "0.13.2" cross CrossVersion.full),
+    addCompilerPlugin("com.olegpy" %% "better-monadic-for" % "0.3.1"),
+    scalacOptions ++= Seq(
+      "-language:higherKinds",
+      "-Ymacro-annotations"
+    ),
+    Compile / run / fork := true
   )

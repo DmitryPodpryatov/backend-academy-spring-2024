@@ -10,6 +10,7 @@ object Libs {
     val tapirVersion = "1.9.9"
     val sttpVersion = "3.9.3"
     val logbackVersion = "1.4.14"
+    val enumeratumVersion = "1.7.2"
     val circeVersion = "0.14.6"
     val phobosVersion = "0.21.0"
     val newtypeVersion = "0.4.4"
@@ -37,7 +38,9 @@ object Libs {
 
   val tapir: Seq[ModuleID] = Seq(
     "com.softwaremill.sttp.tapir" %% "tapir-http4s-server" % V.tapirVersion,
-    "com.softwaremill.sttp.tapir" %% "tapir-json-circe" % V.tapirVersion
+    "com.softwaremill.sttp.tapir" %% "tapir-json-circe" % V.tapirVersion,
+    "com.softwaremill.sttp.tapir" %% "tapir-enumeratum" % V.tapirVersion,
+    "com.softwaremill.sttp.tapir" %% "tapir-swagger-ui-bundle" % V.tapirVersion
   )
 
   val sttp: Seq[ModuleID] = Seq(
@@ -46,7 +49,12 @@ object Libs {
   )
 
   val logback: Seq[ModuleID] = Seq(
-    "ch.qos.logback" % "logback-classic" % V.logbackVersion % Runtime
+    "ch.qos.logback" % "logback-classic" % V.logbackVersion
+  )
+
+  val enumeratum: Seq[ModuleID] = Seq(
+    "com.beachape" %% "enumeratum" % V.enumeratumVersion,
+    "com.beachape" %% "enumeratum-circe" % V.enumeratumVersion
   )
 
   val circe: Seq[ModuleID] = Seq(
