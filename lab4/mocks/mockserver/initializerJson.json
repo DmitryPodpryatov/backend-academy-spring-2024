@@ -1,0 +1,62 @@
+[
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/api/v1/update",
+      "queryStringParameters": {
+        "in": ["1"]
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": {
+        "id": "64c5956a-66de-4e29-92e3-1a714008a2c5",
+        "version": 1
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/api/v1/update",
+      "queryStringParameters": {
+        "in": ["2"]
+      }
+    },
+    "httpResponse": {
+      "statusCode": 201,
+      "body": {
+        "ref": "https://localhost:1080/api/v1/get"
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/api/v1/update",
+      "queryStringParameters": {
+        "in": ["3"]
+      }
+    },
+    "httpResponse": {
+      "statusCode": 429,
+      "body": "Too many requests"
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/api/v1/update",
+      "queryStringParameters": {
+        "in": ["4"]
+      }
+    },
+    "httpResponse": {
+      "statusCode": 500,
+      "body": {
+        "errorId": "b9c424e3-df6b-4558-a70b-c26d607ada6e",
+        "errorMessage": "Unexpected error, please try again later"
+      }
+    }
+  }
+]

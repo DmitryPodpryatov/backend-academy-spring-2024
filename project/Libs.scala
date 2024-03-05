@@ -45,7 +45,8 @@ object Libs {
 
   val sttp: Seq[ModuleID] = Seq(
     "com.softwaremill.sttp.client3" %% "core" % V.sttpVersion,
-    "com.softwaremill.sttp.client3" %% "circe" % V.sttpVersion
+    "com.softwaremill.sttp.client3" %% "circe" % V.sttpVersion,
+    "com.softwaremill.sttp.client3" %% "async-http-client-backend-cats" % V.sttpVersion
   )
 
   val logback: Seq[ModuleID] = Seq(

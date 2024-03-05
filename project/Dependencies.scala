@@ -50,4 +50,22 @@ object Dependencies {
     ).flatten
   }
 
+  object Lab4 extends Dependencies {
+    override def dependencies: Seq[ModuleID] = Seq(
+      Libs.pureconfig,
+      Libs.cats,
+      Libs.http4s,
+      Libs.tapir,
+      Libs.sttp,
+      Libs.logback,
+      Libs.logback,
+      Libs.enumeratum,
+      Libs.circe,
+      Libs.newtype,
+      Libs.doobie,
+      Libs.flyway,
+      Libs.scalatest
+    ).flatten
+  }
+
 }
