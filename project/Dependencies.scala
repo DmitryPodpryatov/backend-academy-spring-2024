@@ -58,12 +58,27 @@ object Dependencies {
       Libs.tapir,
       Libs.sttp,
       Libs.logback,
-      Libs.logback,
       Libs.enumeratum,
       Libs.circe,
       Libs.newtype,
       Libs.doobie,
       Libs.flyway,
+      Libs.scalatest
+    ).flatten
+  }
+
+  object Lab5 extends Dependencies {
+    override def dependencies: Seq[ModuleID] = Seq(
+      Libs.pureconfig,
+      Libs.cats,
+      Libs.http4s,
+      Libs.tapir,
+      Libs.sttp,
+      Libs.logback,
+      Libs.log4cats,
+      Libs.enumeratum,
+      Libs.circe,
+      Libs.newtype,
       Libs.scalatest
     ).flatten
   }

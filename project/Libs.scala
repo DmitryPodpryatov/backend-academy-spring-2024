@@ -10,6 +10,7 @@ object Libs {
     val tapirVersion = "1.9.9"
     val sttpVersion = "3.9.3"
     val logbackVersion = "1.4.14"
+    val log4catsVersion = "2.6.0"
     val enumeratumVersion = "1.7.2"
     val circeVersion = "0.14.6"
     val phobosVersion = "0.21.0"
@@ -51,6 +52,10 @@ object Libs {
 
   val logback: Seq[ModuleID] = Seq(
     "ch.qos.logback" % "logback-classic" % V.logbackVersion
+  )
+
+  val log4cats: Seq[ModuleID] = Seq(
+    "org.typelevel" %% "log4cats-core" % V.log4catsVersion
   )
 
   val enumeratum: Seq[ModuleID] = Seq(
