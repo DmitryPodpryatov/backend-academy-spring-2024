@@ -6,11 +6,13 @@ object Libs {
     val pureconfigVersion = "0.17.5"
     val catsCoreVersion = "2.10.0"
     val catsEffectVersion = "3.5.3"
+    val catsTaglessVersion = "0.15.0"
     val http4sVersion = "0.23.25"
     val tapirVersion = "1.9.9"
     val sttpVersion = "3.9.3"
     val logbackVersion = "1.4.14"
     val log4catsVersion = "2.6.0"
+    val prometheusVersion = "0.16.0"
     val enumeratumVersion = "1.7.2"
     val circeVersion = "0.14.6"
     val phobosVersion = "0.21.0"
@@ -27,7 +29,8 @@ object Libs {
 
   val cats: Seq[ModuleID] = Seq(
     "org.typelevel" %% "cats-core" % V.catsCoreVersion,
-    "org.typelevel" %% "cats-effect" % V.catsEffectVersion
+    "org.typelevel" %% "cats-effect" % V.catsEffectVersion,
+    "org.typelevel" %% "cats-tagless-macros" % V.catsTaglessVersion
   )
 
   val http4s: Seq[ModuleID] = Seq(
@@ -41,13 +44,15 @@ object Libs {
     "com.softwaremill.sttp.tapir" %% "tapir-http4s-server" % V.tapirVersion,
     "com.softwaremill.sttp.tapir" %% "tapir-json-circe" % V.tapirVersion,
     "com.softwaremill.sttp.tapir" %% "tapir-enumeratum" % V.tapirVersion,
+    "com.softwaremill.sttp.tapir" %% "tapir-prometheus-metrics" % V.tapirVersion,
     "com.softwaremill.sttp.tapir" %% "tapir-swagger-ui-bundle" % V.tapirVersion
   )
 
   val sttp: Seq[ModuleID] = Seq(
     "com.softwaremill.sttp.client3" %% "core" % V.sttpVersion,
     "com.softwaremill.sttp.client3" %% "circe" % V.sttpVersion,
-    "com.softwaremill.sttp.client3" %% "async-http-client-backend-cats" % V.sttpVersion
+    "com.softwaremill.sttp.client3" %% "async-http-client-backend-cats" % V.sttpVersion,
+    "com.softwaremill.sttp.client3" %% "prometheus-backend" % V.sttpVersion
   )
 
   val logback: Seq[ModuleID] = Seq(
@@ -56,6 +61,11 @@ object Libs {
 
   val log4cats: Seq[ModuleID] = Seq(
     "org.typelevel" %% "log4cats-core" % V.log4catsVersion
+  )
+
+  val prometheus: Seq[ModuleID] = Seq(
+    "io.prometheus" % "simpleclient_common" % V.prometheusVersion,
+    "io.prometheus" % "simpleclient_hotspot" % V.prometheusVersion
   )
 
   val enumeratum: Seq[ModuleID] = Seq(
