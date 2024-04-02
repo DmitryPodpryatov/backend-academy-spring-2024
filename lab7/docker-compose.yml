@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  mockserver:
+    image: mockserver/mockserver:5.14.0
+    command: -serverPort 1080
+    ports:
+      - "1080:1080"
+    environment:
+      MOCKSERVER_INITIALIZATION_JSON_PATH: /initializerJson.json
+    volumes:
+      - "./mocks/mockserver/initializerJson.json:/initializerJson.json"

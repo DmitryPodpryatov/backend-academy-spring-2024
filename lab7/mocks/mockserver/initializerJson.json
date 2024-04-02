@@ -1,0 +1,30 @@
+[
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/request"
+    },
+    "httpResponse": {
+      "statusCode": 504,
+      "body": "504 Gateway Timeout"
+    },
+    "times": {
+      "remainingTimes": 2,
+      "unlimited": true
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/request"
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": "ok"
+    },
+    "times": {
+      "remainingTimes": 1,
+      "unlimited": false
+    }
+  }
+]
