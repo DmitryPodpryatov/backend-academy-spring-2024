@@ -10,6 +10,7 @@ object Libs {
     val http4sVersion = "0.23.25"
     val tapirVersion = "1.9.9"
     val sttpVersion = "3.9.3"
+    val fs2Version = "3.3.1"
     val logbackVersion = "1.4.14"
     val log4catsVersion = "2.6.0"
     val prometheusVersion = "0.16.0"
@@ -55,12 +56,17 @@ object Libs {
     "com.softwaremill.sttp.client3" %% "prometheus-backend" % V.sttpVersion
   )
 
+  val fs2: Seq[ModuleID] = Seq(
+    "com.github.fd4s" %% "fs2-kafka" % V.fs2Version
+  )
+
   val logback: Seq[ModuleID] = Seq(
     "ch.qos.logback" % "logback-classic" % V.logbackVersion
   )
 
   val log4cats: Seq[ModuleID] = Seq(
-    "org.typelevel" %% "log4cats-core" % V.log4catsVersion
+    "org.typelevel" %% "log4cats-core" % V.log4catsVersion,
+    "org.typelevel" %% "log4cats-slf4j" % V.log4catsVersion
   )
 
   val prometheus: Seq[ModuleID] = Seq(

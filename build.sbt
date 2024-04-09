@@ -104,3 +104,16 @@ lazy val lab7 = (project in file("lab7"))
     ),
     Compile / run / fork := true
   )
+
+lazy val lab8 = (project in file("lab8"))
+  .settings(
+    name := "lab8",
+    libraryDependencies ++= Lab8.dependencies,
+    addCompilerPlugin("org.typelevel" %% "kind-projector" % "0.13.2" cross CrossVersion.full),
+    addCompilerPlugin("com.olegpy" %% "better-monadic-for" % "0.3.1"),
+    scalacOptions ++= Seq(
+      "-language:higherKinds",
+      "-Ymacro-annotations"
+    ),
+    Compile / run / fork := true
+  )
