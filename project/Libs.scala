@@ -22,6 +22,7 @@ object Libs {
     val flywayVersion = "9.17.0"
     val redis4catsVersion = "1.5.2"
     val scalatestVersion = "3.2.18"
+    val testcontainersVersion = "0.41.3"
   }
 
   val pureconfig: Seq[ModuleID] = Seq(
@@ -108,6 +109,11 @@ object Libs {
 
   val scalatest: Seq[ModuleID] = Seq(
     "org.scalatest" %% "scalatest" % V.scalatestVersion
+  )
+
+  val testcontainers: Seq[ModuleID] = Seq(
+    "com.dimafeng" %% "testcontainers-scala-scalatest" % V.testcontainersVersion,
+    "com.dimafeng" %% "testcontainers-scala-kafka" % V.testcontainersVersion
   )
 
 }
