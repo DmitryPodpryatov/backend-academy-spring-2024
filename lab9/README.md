@@ -1,4 +1,4 @@
-# Семинар 8. Kafka Transactions
+# Семинар 9. Kafka Transactions
 
 > _Поднимаем зависимости для семинара:_
 
