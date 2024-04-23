@@ -11,6 +11,7 @@ object Libs {
     val tapirVersion = "1.9.9"
     val sttpVersion = "3.9.3"
     val fs2Version = "3.3.1"
+    val s3Version = "2.25.35"
     val logbackVersion = "1.4.14"
     val log4catsVersion = "2.6.0"
     val prometheusVersion = "0.16.0"
@@ -59,6 +60,10 @@ object Libs {
 
   val fs2: Seq[ModuleID] = Seq(
     "com.github.fd4s" %% "fs2-kafka" % V.fs2Version
+  )
+
+  val s3: Seq[ModuleID] = Seq(
+    "software.amazon.awssdk" % "s3" % V.s3Version
   )
 
   val logback: Seq[ModuleID] = Seq(
