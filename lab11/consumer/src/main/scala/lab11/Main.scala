@@ -1,4 +1,4 @@
-package lab7
+package lab11
 
 import cats.effect.{IO, IOApp}
 

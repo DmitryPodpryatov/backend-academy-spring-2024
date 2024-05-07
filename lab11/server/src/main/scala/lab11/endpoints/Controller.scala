@@ -1,4 +1,4 @@
-package lab7.endpoints
+package lab11.endpoints
 
 import sttp.tapir.server.ServerEndpoint
 

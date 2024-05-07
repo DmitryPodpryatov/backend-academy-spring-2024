@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  server:
+    container_name: server
+    image: ???
+
+  producer:
+    container_name: producer
+    image: ???
+
+  consumer:
+    container_name: consumer
+    image: ???
