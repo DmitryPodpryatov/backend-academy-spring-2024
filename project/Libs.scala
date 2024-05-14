@@ -15,7 +15,8 @@ object Libs {
     val logbackVersion = "1.4.14"
     val log4catsVersion = "2.6.0"
     val prometheusVersion = "0.16.0"
-    val enumeratumVersion = "1.7.2"
+    val enumeratumVersion = "1.7.3"
+    val enumeratumDoobieVersion = "1.7.4"
     val circeVersion = "0.14.6"
     val phobosVersion = "0.21.0"
     val newtypeVersion = "0.4.4"
@@ -82,7 +83,8 @@ object Libs {
 
   val enumeratum: Seq[ModuleID] = Seq(
     "com.beachape" %% "enumeratum" % V.enumeratumVersion,
-    "com.beachape" %% "enumeratum-circe" % V.enumeratumVersion
+    "com.beachape" %% "enumeratum-circe" % V.enumeratumVersion,
+    "com.beachape" %% "enumeratum-doobie" % V.enumeratumDoobieVersion
   )
 
   val circe: Seq[ModuleID] = Seq(
