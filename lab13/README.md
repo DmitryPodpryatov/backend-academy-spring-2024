@@ -26,6 +26,7 @@ Redis является, пожалуй, самым популярным выбо
 - https://redis.io/docs/latest/
 - https://www.tutorialspoint.com/redis/index.htm
 - https://hub.docker.com/_/redis
+- https://raw.githubusercontent.com/redis/redis/7.2/redis.conf
 
 ---
 
