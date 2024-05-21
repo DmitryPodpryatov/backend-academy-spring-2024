@@ -7,10 +7,6 @@ lazy val root = (project in file("."))
   .settings(
     name := "backend-academy-spring-2024"
   )
-  .aggregate(
-    lab1,
-    lab2
-  )
 
 lazy val lab1 = (project in file("lab1"))
   .settings(
@@ -148,6 +144,19 @@ lazy val lab12 = (project in file("lab12"))
   .settings(
     name := "lab12",
     libraryDependencies ++= Lab12.dependencies,
+    addCompilerPlugin("org.typelevel" %% "kind-projector" % "0.13.2" cross CrossVersion.full),
+    addCompilerPlugin("com.olegpy" %% "better-monadic-for" % "0.3.1"),
+    scalacOptions ++= Seq(
+      "-language:higherKinds",
+      "-Ymacro-annotations"
+    ),
+    Compile / run / fork := true
+  )
+
+lazy val lab13 = (project in file("lab13"))
+  .settings(
+    name := "lab13",
+    libraryDependencies ++= Lab13.dependencies,
     addCompilerPlugin("org.typelevel" %% "kind-projector" % "0.13.2" cross CrossVersion.full),
     addCompilerPlugin("com.olegpy" %% "better-monadic-for" % "0.3.1"),
     scalacOptions ++= Seq(

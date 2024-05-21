@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+  postgres:
+    container_name: postgres
+    image: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    env_file:
+      - database.env
+
+  redis:
+    container_name: redis
+    image: redis:7
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+
+volumes:
+  postgres-data:
+  redis-data:
