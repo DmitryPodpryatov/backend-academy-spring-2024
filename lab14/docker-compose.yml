@@ -1,0 +1,8 @@
+version: "3.9"
+
+services:
+  server:
+    container_name: lab-14-server
+    image: lab-14-server:0.0.1-SNAPSHOT
+    ports:
+      - "8080:8080"
