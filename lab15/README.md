@@ -12,6 +12,7 @@
 ---
 
 - https://tpolecat.github.io/doobie/docs/07-Updating.html
+- https://www.youtube.com/watch?v=aQrQnNvJguA
 
 ### Стриминг
 
